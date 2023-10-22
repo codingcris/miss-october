@@ -17,18 +17,23 @@ function increaseQuantity() {
 document.getElementById("pay-now").addEventListener("click", async function () {
   try {
     // Make a POST request to your AWS Lambda endpoint
-    const response = await fetch("YOUR_AWS_API_GATEWAY_ENDPOINT", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://79gjaginv6.execute-api.us-east-2.amazonaws.com/test",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     const data = await response.json();
 
     if (data.id) {
       // Redirect user to Stripe Checkout using the session ID
-      const stripe = Stripe("YOUR_STRIPE_PUBLIC_KEY");
+      const stripe = Stripe(
+        "pk_test_51O2wFAAQdYAgdONHPN8sVYO42MMGadgmuPiElmJbxGZBurwAfSGfO9KM4hG1YP6HBU6iZ27MPy0DdnpLOgbEmoOo00S3vYwK9b"
+      );
       stripe.redirectToCheckout({ sessionId: data.id });
     } else {
       console.error("Failed to create Stripe session.");
