@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miss October</title>
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <script src="./assets/scripts/quantity.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <nav>
+          <h1 class="logo">Miss October</h1>
+          <ul>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Portfolio</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="hero">
+        <a class="button" href="#shop">Shop</a>
+      </div>
+
+      <div class="gallery" id="shop">
+        <div class="photo"></div>
+        <div class="description">
+          <h1>Miss October Heavy Canvas Tote</h1>
+          <ul>
+            <li>15"W × 16"H Heavy Canvas</li>
+            <li>12 OZ Volume</li>
+            <li>Made to carry a heavy load and last years of usage</li>
+          </ul>
+          <div class="quantity-container">
+            <span class="quantity-text"
+              >Quantity (<span class="quantity-count">1</span> in cart)</span
+            >
+            <div class="input-group">
+              <button class="decrement" onclick="decreaseQuantity()">-</button>
+              <input
+                type="number"
+                class="quantity-input"
+                value="1"
+                min="1"
+                readonly
+              />
+              <button class="increment" onclick="increaseQuantity()">+</button>
+            </div>
+          </div>
+        </div>
+        <button type="button" id="pay-now" onclick="payNow()">Buy Now</button>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
