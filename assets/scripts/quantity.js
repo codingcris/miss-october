@@ -18,7 +18,7 @@ document.getElementById("pay-now").addEventListener("click", async function () {
   try {
     // Make a POST request to your AWS Lambda endpoint
     const response = await fetch(
-      "https://79gjaginv6.execute-api.us-east-2.amazonaws.com/test",
+      " https://79gjaginv6.execute-api.us-east-2.amazonaws.com/test",
       {
         method: "POST",
         headers: {
