@@ -28,6 +28,7 @@ document.getElementById("pay-now").addEventListener("click", async function () {
     );
 
     const data = await response.text();
+    console.log("data: ", data);
     console.log("Received response:", response);
 
     if (data.id) {
