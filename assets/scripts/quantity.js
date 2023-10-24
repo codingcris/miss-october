@@ -28,15 +28,14 @@ document.getElementById("pay-now").addEventListener("click", async function () {
     );
 
     const data = await response.json();
-    console.log("data: ", data);
     console.log("Received response:", response);
 
-    if (data.id) {
+    if (data["id"]) {
       // Redirect user to Stripe Checkout using the session ID
       const stripe = Stripe(
         "pk_test_51O2wFAAQdYAgdONHPN8sVYO42MMGadgmuPiElmJbxGZBurwAfSGfO9KM4hG1YP6HBU6iZ27MPy0DdnpLOgbEmoOo00S3vYwK9b"
       );
-      stripe.redirectToCheckout({ sessionId: data.id });
+      stripe.redirectToCheckout({ sessionId: data["id"] });
     } else {
       console.error("Failed to create Stripe session.");
     }
