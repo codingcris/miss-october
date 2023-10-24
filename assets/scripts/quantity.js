@@ -1,4 +1,4 @@
-import Stripe from stripe
+import { loadStripe } from "@stripe/stripe-js";
 
 function decreaseQuantity() {
   let input = document.querySelector(".quantity-input");
@@ -34,9 +34,10 @@ document.getElementById("pay-now").addEventListener("click", async function () {
 
     if (data["id"]) {
       // Redirect user to Stripe Checkout using the session ID
-      const stripe = Stripe(
+      const stripe = window.Stripe(
         "pk_test_51O2wFAAQdYAgdONHPN8sVYO42MMGadgmuPiElmJbxGZBurwAfSGfO9KM4hG1YP6HBU6iZ27MPy0DdnpLOgbEmoOo00S3vYwK9b"
       );
+
       stripe.redirectToCheckout({ sessionId: data["id"] });
     } else {
       console.error("Failed to create Stripe session.");
