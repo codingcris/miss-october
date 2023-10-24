@@ -1,5 +1,3 @@
-import { loadStripe } from "@stripe/stripe-js";
-
 function decreaseQuantity() {
   let input = document.querySelector(".quantity-input");
   let count = document.querySelector(".quantity-count");
