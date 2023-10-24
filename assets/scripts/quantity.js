@@ -28,6 +28,7 @@ document.getElementById("pay-now").addEventListener("click", async function () {
     );
 
     const data = await response.json();
+    console.log("Received response:", response);
 
     if (data.id) {
       // Redirect user to Stripe Checkout using the session ID
