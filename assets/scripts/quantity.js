@@ -1,3 +1,5 @@
+import Stripe from stripe
+
 function decreaseQuantity() {
   let input = document.querySelector(".quantity-input");
   let count = document.querySelector(".quantity-count");
